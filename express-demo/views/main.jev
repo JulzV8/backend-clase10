@@ -1,0 +1,4 @@
+<h2>esti es el main hev</h2>
+<h2>{{mensaje}}</h2>
+<h2>aca estan los parti</h2>
+{{> partial}}
