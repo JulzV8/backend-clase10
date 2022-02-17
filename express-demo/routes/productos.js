@@ -12,11 +12,28 @@ class Producto{
   }
 }
 
-arrayProductos = [ 
+function addProducto(nombre,stock,precio,array) {
+  let biggestId = 0;
+  if (array) {
+    array.forEach(element => {
+      if (element.id>biggestId) {
+        biggestId = element.id;
+      }
+    });
+  }
+  biggestId++
+  const producto = new Producto(biggestId,nombre,stock,precio)
+  array.push(producto)
+}
+
+let arrayProductos = [ 
   new Producto(1,"hotwheels",20,250),
   new Producto(2,"max-steel",5,900),
   new Producto(3,"woody",10,1275)
 ]
+
+exports.arrayProductos = arrayProductos;
+module.exports = router;
 
 router.get("/",(req,res)=>{
   const {nombre} = req.query
@@ -83,20 +100,6 @@ router.delete("/:id",(req,res)=>{
 
 router.post("/",(req,res)=>{
   const {nombre,stock,precio} = req.body
-  let biggestId = 0;
-  if (arrayProductos) {
-    arrayProductos.forEach(element => {
-      if (element.id>biggestId) {
-        biggestId = element.id;
-      }
-    });
-  }
-  biggestId++
-  const producto = new Producto(biggestId,nombre,stock,precio)
-  arrayProductos.push(producto)
-  
-  res.redirect(307, '/');
-  res.send(arrayProductos.find(m=> m.id == biggestId))
+  addProducto(nombre,stock,precio,arrayProductos) 
+  res.redirect('/');
 })
-
-module.exports = router;

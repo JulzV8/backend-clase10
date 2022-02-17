@@ -1,4 +1,13 @@
-<h2>esti es el main hev</h2>
-<h2>{{mensaje}}</h2>
-<h2>aca estan los parti</h2>
-{{> partial}}
+{{#if }}
+          <div class="w-50 border border-primary border-2 rounded-3">
+          <h2 class="h1 text-center my-3">Lista de Productos</h2>
+            <div>
+              <ul class="list-group p-5">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">A fourth item</li>
+                <li class="list-group-item">And a fifth one</li>
+              </ul>
+            </div>
+          </div>

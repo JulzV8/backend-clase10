@@ -4,11 +4,11 @@ const PORT = process.env.PORT || 8080
 const productosRouter = require('./routes/productos')
 const handlebars = require("express-handlebars")
 
+console.log(arrayProductos);
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use("/api/productos",productosRouter)
-app.use(express.static("public"))
 
 const server = app.listen(PORT, ()=>{
   console.log(`escuchando ${PORT}`);
@@ -34,12 +34,8 @@ app.get("/hello",(req,res)=>{
   res.render("test", {mensaje:"ejsss"});
 })
 
-app.get("/handle",(req,res)=>{
-  res.render("main", {mensaje:"jghjgjghfgh"});
-})
-
 app.get("/",(req,res)=>{
-  res.send("Pagina Principal")
+  res.render("main", {mensaje:"jghjgjghfgh"});
 })
 
 server.on("error",(err)=>{
