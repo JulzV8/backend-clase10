@@ -12,18 +12,11 @@ const server = app.listen(PORT, ()=>{
   console.log(`escuchando ${PORT}`);
 })
 
-app.engine("jev",handlebars.engine({
-  extname: ".jev",
-  defaultLayout: "index.jev",
-  layoutsDir: __dirname + "/views/layouts",
-  partialsDir: __dirname + "/views"
-}));
-
 app.set('views','./views');
-app.set('view engine','jev');
+app.set('view engine','pug');
 
 app.get("/",(req,res)=>{
-  res.render("main");
+  res.render("main.pug");
 })
 
 server.on("error",(err)=>{

@@ -37,11 +37,35 @@ module.exports = router;
 
 router.get("/",(req,res)=>{
   res.render("get", {arrayProductos:arrayProductos});
+  // const {nombre} = req.query
+  // if (nombre) {
+  //   res.send(arrayProductos.find(m=> m.nombre == nombre))
+  // }else{
+  //   res.send(arrayProductos)
+  // }
 })
 
 router.get("/get",(req,res)=>{
   res.render("get", {arrayProductos:arrayProductos});
 })
+
+// router.get("/productos",(req,res)=>{
+//   res.render("main", {arrayProductos:arrayProductos});
+
+// })
+
+// router.get("/:id",(req,res)=>{
+//   const {id} = req.params
+//   const producto = arrayProductos.find(m=> m.id == id)
+//   if (!producto) {
+//     res.status(404).send({
+//       error:"Producto no encontrado"
+//     })
+//     return
+//   }
+//   res.send(producto)
+// })
+
 
 router.get("/productoRandom",(req,res)=>{
   const numRandom = Math.floor(Math.random() * arrayProductos.length);
