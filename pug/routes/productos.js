@@ -27,9 +27,9 @@ function addProducto(nombre,stock,precio,array) {
 }
 
 let arrayProductos = [ 
-  // new Producto(1,"hotwheels",20,250),
-  // new Producto(2,"max-steel",5,900),
-  // new Producto(3,"woody",10,1275)
+  new Producto(1,"hotwheels",20,250),
+  new Producto(2,"max-steel",5,900),
+  new Producto(3,"woody",10,1275)
 ]
 
 exports.arrayProductos = arrayProductos;
@@ -45,9 +45,9 @@ router.get("/",(req,res)=>{
   // }
 })
 
-router.get("/get",(req,res)=>{
-  res.render("get", {arrayProductos:arrayProductos});
-})
+// router.get("/get",(req,res)=>{
+//   res.render("get", {arrayProductos:arrayProductos});
+// })
 
 // router.get("/productos",(req,res)=>{
 //   res.render("main", {arrayProductos:arrayProductos});
