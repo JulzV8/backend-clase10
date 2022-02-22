@@ -26,7 +26,11 @@ head
                                   td= val.nombre
                                     td= val.stock
                                       td= val.precio
-                                        input.btn.btn-success(type='button' onclick="location.href='/productos/';" value='Ver Productos')
+        div.d-flex.justify-content-end
+          input.btn.btn-success.me-3(type='button' onclick="location.href='/';" value='Ingresar Productos')
   else
     .w-50.mx-auto.border.border-primary.border-2.rounded-3
       h2.h1.text-center.my-3 No hay productos
+        div.d-flex.justify-content-end
+          input.btn.btn-success.me-3(type='button' onclick="location.href='/';" value='Ingresar Productos')
+

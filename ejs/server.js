@@ -12,10 +12,10 @@ const server = app.listen(PORT, ()=>{
 })
 
 app.set('views','./views');
-app.set('view engine','pug');
+app.set('view engine','ejs');
 
 app.get("/",(req,res)=>{
-  res.render("main.pug");
+  res.render("main.ejs");
 })
 
 server.on("error",(err)=>{
